@@ -154,3 +154,39 @@ if __name__ == '__main__':
     print("\n" + "=" * 60)
     print("all finished")
     print("=" * 60)
+
+
+
+
+        # =====================  Edge Cases ========================
+    print("\n" + "=" * 60)
+    print("Edge Cases ")
+    print("=" * 60)
+
+
+    print("\nEdge Case 1: Empty Graph ")
+    graph_empty = {}
+    try:
+        print("function2：", find_minimum_coverage(graph_empty))
+        print("function3：", find_fast_coverage(graph_empty))
+    except:
+        print("Empty Graph")
+
+
+    print("\nEdge Case 2: Fully Connected Graph ")
+    graph_fully = {1: [2, 3], 2: [1, 3], 3: [1, 2]}
+    print("is_valid_coverage test：", is_valid_coverage([1], graph_fully))
+    print("function2：", find_minimum_coverage(graph_fully))
+    print("function3：", find_fast_coverage(graph_fully))
+
+
+    print("\nEdge Case 3: Very Sparse Graph ")
+    graph_sparse = {1: [], 2: [], 3: []}
+    print("function2：", find_minimum_coverage(graph_sparse))
+    print("function3：", find_fast_coverage(graph_sparse))
+
+
+    print("\nEdge Case 4: Very Dense Graph ")
+    graph_dense = {1: [2,3,4], 2: [1,3,4], 3: [1,2,4], 4: [1,2,3]}
+    print("function2：", find_minimum_coverage(graph_dense))
+    print("function3：", find_fast_coverage(graph_dense))
