@@ -53,6 +53,13 @@ def sort_by_efficiency(budget, costs, influences):
         result.append((costs[best_index], influences[best_index], best_index))
     return result
 
+def sort_better(costs, influences, indexes = None):
+    if indexes is None:
+        indexes = [[i] for i in range(len(influences))]
+    pivot = influences[0]/costs[0]
+    smaller = []
+    bigger = []
+
 def fast_alternative_strategy(budget, costs, influences):
     tw = 0
     sort = sort_by_efficiency(budget,costs, influences)
